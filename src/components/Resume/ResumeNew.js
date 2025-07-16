@@ -9,8 +9,9 @@ import "react-pdf/dist/Page/AnnotationLayer.css";
 // ✅ Percorso del PDF nella cartella "public"
 const pdf = process.env.PUBLIC_URL + "/Stefano_Fabiano_CV.pdf";
 
-// ✅ Worker per PDF.js
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+import worker from 'pdfjs-dist/build/pdf.worker.entry';
+pdfjs.GlobalWorkerOptions.workerSrc = worker;
+
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
