@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-const pdf = "/Stefano_Fabiano_CV.pdf"; // <-- deve essere nella cartella 'public'
+const pdf = "/Stefano_Fabiano_CV.pdf";
 
 function ResumeNew() {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
@@ -17,7 +17,7 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative", marginBottom: "20px" }}>
+        <Row style={{ justifyContent: "center", marginBottom: "20px" }}>
           <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
             &nbsp;Download CV
