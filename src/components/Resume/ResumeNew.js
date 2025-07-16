@@ -1,61 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Viewer } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import "@react-pdf-viewer/core/lib/styles/index.css";
+import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import 'react-pdf/dist/Page/AnnotationLayer.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
-const pdf = "/Stefano_Fabiano_CV.pdf";
+const pdf = "/Stefano_Fabiano_CV.pdf"; // <-- deve essere nella cartella 'public'
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
 
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginBottom: "20px" }}>
           <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
         </Row>
 
-        <Row className="resume d-flex flex-column align-items-center">
-          <Document
-            file={pdf}
-            onLoadSuccess={onDocumentLoadSuccess}
-            className="d-flex flex-column align-items-center"
-          >
-            {Array.from({ length: numPages }, (_, index) => (
-              <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                scale={width > 786 ? 1.7 : 0.6}
-                className="my-3"
-              />
-            ))}
-          </Document>
-        </Row>
-
-        <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
-        </Row>
+        <div style={{ height: "90vh" }}>
+          <Viewer fileUrl={pdf} plugins={[defaultLayoutPluginInstance]} />
+        </div>
       </Container>
     </div>
   );
