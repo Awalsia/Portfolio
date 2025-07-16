@@ -1,57 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
-import workerSrc from "pdfjs-dist/build/pdf.worker.entry"; // ⬅️ USA QUESTO
-import "react-pdf/dist/Page/AnnotationLayer.css";
-
-pdfjs.GlobalWorkerOptions.workerSrc = workerSrc; // ⬅️ ASSICURATI CHE QUESTO CI SIA
 
 const pdf = "/Stefano_Fabiano_CV.pdf";
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
-  const [numPages, setNumPages] = useState(null);
-
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
-
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", position: "relative", marginBottom: "20px" }}>
           <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
         </Row>
 
-        <Row className="resume d-flex flex-column align-items-center">
-          <Document
-            file={pdf}
-            onLoadSuccess={onDocumentLoadSuccess}
-            className="d-flex flex-column align-items-center"
-          >
-            {Array.from({ length: numPages }, (_, index) => (
-              <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                scale={width > 786 ? 1.7 : 0.6}
-                className="my-3"
-              />
-            ))}
-          </Document>
+        <Row style={{ justifyContent: "center" }}>
+          <iframe
+            src={pdf}
+            width="80%"
+            height="800px"
+            style={{ border: "none", boxShadow: "0px 0px 10px rgba(0,0,0,0.2)" }}
+            title="CV Preview"
+          />
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", marginTop: "20px" }}>
           <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
             &nbsp;Download CV
