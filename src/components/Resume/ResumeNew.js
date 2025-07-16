@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
-const pdf = "/Stefano_Fabiano_CV.pdf";
+const pdf = "/stefano-fabiano-cv.pdf";
 
 function ResumeNew() {
   return (
