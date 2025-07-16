@@ -6,8 +6,8 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
-  let date = new Date();
-  
+  const date = new Date();
+const year = date.getFullYear();
   return (
     <Container fluid className="footer">
       <Row>
@@ -43,7 +43,7 @@ function Footer() {
               >
                 <FaLinkedinIn />
               </a>
-            </li>
+            </li><p>© {year} Stefano Fabiano</p>
 {/*            <li className="social-icons">
               <a
                 href="https://www.instagram.com/soumyajit4419"
