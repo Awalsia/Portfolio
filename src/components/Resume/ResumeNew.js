@@ -4,10 +4,10 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import worker from 'pdfjs-dist/build/pdf.worker.entry';
+import workerSrc from "pdfjs-dist/build/pdf.worker.entry";
+import "react-pdf/dist/Page/AnnotationLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = worker;
+pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
 const pdf = "/Stefano_Fabiano_CV.pdf";
 
