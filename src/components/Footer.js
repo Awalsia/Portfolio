@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
-  AiFillGithub,
+  AiFillGithub
  } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
