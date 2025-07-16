@@ -4,14 +4,12 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/Page/AnnotationLayer.css";
-
-// ✅ Percorso del PDF nella cartella "public"
-const pdf = process.env.PUBLIC_URL + "/Stefano_Fabiano_CV.pdf";
-
+import 'react-pdf/dist/Page/AnnotationLayer.css';
 import worker from 'pdfjs-dist/build/pdf.worker.entry';
+
 pdfjs.GlobalWorkerOptions.workerSrc = worker;
 
+const pdf = "/Stefano_Fabiano_CV.pdf";
 
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
@@ -29,27 +27,20 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ maxWidth: "250px" }}
-          >
+          <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
         </Row>
 
-        <Row className="resume d-flex flex-column align-items-center mt-4">
+        <Row className="resume d-flex flex-column align-items-center">
           <Document
             file={pdf}
             onLoadSuccess={onDocumentLoadSuccess}
             className="d-flex flex-column align-items-center"
           >
-            {Array.from(new Array(numPages), (el, index) => (
+            {Array.from({ length: numPages }, (_, index) => (
               <Page
                 key={`page_${index + 1}`}
                 pageNumber={index + 1}
@@ -61,13 +52,7 @@ function ResumeNew() {
         </Row>
 
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ maxWidth: "250px" }}
-          >
+          <Button variant="primary" href={pdf} target="_blank" style={{ maxWidth: "250px" }}>
             <AiOutlineDownload />
             &nbsp;Download CV
           </Button>
