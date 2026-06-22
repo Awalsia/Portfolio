@@ -78,7 +78,7 @@ function Projects() {
 
 <Col md={4} className="project-card">
   <ProjectCard
-    imgPath={datingApp}
+    imgPath={emotion}
     isBlog={false}
     title="Dating Request Website"
     description="A modern dating web application built with React and EmailJS. Users can create and send date requests by selecting an activity, date and time through an interactive and responsive interface. The project features email notifications, playful UX elements, and a fully deployed live version."
