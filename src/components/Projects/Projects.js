@@ -76,16 +76,16 @@ function Projects() {
                />
           </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Social Events Web app"
-              description="This project is currently under development.The goal of the app is to help users discover local events and connect with new people based on shared interests and emotional state detected through facial expression analysis."
-              //ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
-            />
-          </Col>
+<Col md={4} className="project-card">
+  <ProjectCard
+    imgPath={datingApp}
+    isBlog={false}
+    title="Dating Request Website"
+    description="A modern dating web application built with React and EmailJS. Users can create and send date requests by selecting an activity, date and time through an interactive and responsive interface. The project features email notifications, playful UX elements, and a fully deployed live version."
+    ghLink="https://github.com/Awalsia/Dating-website-"
+    demoLink="https://dating-website-stefano.netlify.app/"
+  />
+</Col>
         </Row>
       </Container>
     </Container>
