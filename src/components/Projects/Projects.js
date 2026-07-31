@@ -25,8 +25,8 @@ function Projects() {
             <ProjectCard
               imgPath={chatify}
               isBlog={false}
-              title="Task Tracker"
-              description="A simple yet visually appealing Task Tracker built with React.js. It allows users to add, mark, and delete tasks, with data persisted via localStorage. Styled with custom CSS animations for a smooth user experience."
+              title="Bartind'r"
+              description="A mobile recruitment platform that connects bartenders and employers through a Tinder-inspired swipe system. Swipe right to like, swipe left to skip. Once both users like each other, a match is created and they can start chatting, exchange photos, videos, documents, voice messages, and arrange interviews. Profiles are shown only once, making every swipe meaningful and keeping the experience fast and intuitive."
               ghLink="https://github.com/Awalsia/task-tracker"
               
             />
