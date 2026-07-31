@@ -27,7 +27,7 @@ function Projects() {
               isBlog={false}
               title="Bartind'r"
               description="A mobile recruitment platform that connects bartenders and employers through a Tinder-inspired swipe system. Swipe right to like, swipe left to skip. Once both users like each other, a match is created and they can start chatting, exchange photos, videos, documents, voice messages, and arrange interviews. Profiles are shown only once, making every swipe meaningful and keeping the experience fast and intuitive."
-              ghLink="https://github.com/Awalsia/task-tracker"
+              ghLink="https://github.com/Awalsia/bartender-match"
               
             />
           </Col>
