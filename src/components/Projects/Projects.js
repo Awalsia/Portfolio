@@ -7,7 +7,7 @@ import emotion from "../../Assets/Projects/emotion.png";
 import editor from "../../Assets/Projects/codeEditor.png";
 import chatify from "../../Assets/Projects/chatify.png";
 import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import versio from "../../Assets/Projects/versio.png";
 
 function Projects() {
   return (
@@ -35,11 +35,11 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={versio}
               isBlog={false}
-              title="Weather App"
-              description="A modern weather app made with React and OpenWeather API. Enter a city to get live temperature and weather conditions. Features an animated background and clean, responsive design."
-              ghLink="https://github.com/Awalsia/weather-app/tree/main"
+              title="Versio"
+              description="A multilingual chat app that connects people across language barriers. Write or record a voice message in your own language, and the other person receives it translated into theirs. Supports 20 languages, automatic text and voice translation, and the option to tap a message to see the original. Source code is private and available on request."
+              requestAccessLink="mailto:awalsia25@gmail.com?subject=Versio%20-%20Source%20code%20access%20request"
               
             />
           </Col>
