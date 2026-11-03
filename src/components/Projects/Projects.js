@@ -38,8 +38,8 @@ function Projects() {
               imgPath={versio}
               isBlog={false}
               title="Versio"
-              description="A multilingual chat app that connects people across language barriers. Write or record a voice message in your own language, and the other person receives it translated into theirs. Supports 20 languages, automatic text and voice translation, and the option to tap a message to see the original. Source code is private and available on request."
-              requestAccessLink="mailto:awalsia25@gmail.com?subject=Versio%20-%20Source%20code%20access%20request"
+              description="A multilingual chat app that connects people across language barriers. Write or record a voice message in your own language, and the other person receives it translated into theirs. Supports 20 languages, automatic text and voice translation, and the option to tap a message to see the original."
+              demoLink="https://versiochat.com/"
               
             />
           </Col>

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
-import { BsGithub, BsEnvelope } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 
 function ProjectCards(props) {
   return (
@@ -13,10 +13,12 @@ function ProjectCards(props) {
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        <Button variant="primary" href={props.requestAccessLink || props.ghLink} target="_blank">
-          {props.requestAccessLink ? <BsEnvelope /> : <BsGithub />} &nbsp;
-          {props.requestAccessLink ? "Request access" : props.isBlog ? "Blog" : "GitHub"}
-        </Button>
+        {props.ghLink && (
+          <Button variant="primary" href={props.ghLink} target="_blank">
+            <BsGithub /> &nbsp;
+            {props.isBlog ? "Blog" : "GitHub"}
+          </Button>
+        )}
         {"\n"}
         {"\n"}
 
@@ -27,7 +29,7 @@ function ProjectCards(props) {
             variant="primary"
             href={props.demoLink}
             target="_blank"
-            style={{ marginLeft: "10px" }}
+            style={{ marginLeft: props.ghLink ? "10px" : 0 }}
           >
             <CgWebsite /> &nbsp;
             {"Demo"}
