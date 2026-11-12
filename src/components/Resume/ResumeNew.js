@@ -15,19 +15,16 @@ function ResumeNew() {
           <Button variant="primary" href={pdfCV} download="CV_Stefano_Fabiano.pdf">
             <AiOutlineDownload /> &nbsp; Download CV
           </Button>
-          <a href={pdfCV} target="_blank" rel="noreferrer" style={{ color: "white", marginTop: "15px", textAlign: "center" }}>
-            Open CV in a new tab
-          </a>
         </Row>
         <Row style={{ justifyContent: "center", marginBottom: "40px" }}>
-          <iframe
-            src={pdfCV}
-            title="Stefano Fabiano CV"
+          <img
+            src="/cv-stefano-full.png"
+            alt="CV completo di Stefano Fabiano"
             style={{
               width: "90%",
               maxWidth: "1000px",
-              height: "80vh",
-              minHeight: "500px",
+              height: "auto",
+              display: "block",
               border: "1px solid #ccc",
               boxShadow: "0px 0px 10px rgba(0,0,0,0.2)",
               backgroundColor: "white",
