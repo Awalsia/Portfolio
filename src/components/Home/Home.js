@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/stefano-portrait.png";
+import homeLogo from "../../Assets/stefano-cutout.png";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
@@ -36,12 +36,11 @@ function Home() {
                 alt="Stefano Fabiano"
                 className="img-fluid"
                 style={{
-                  borderRadius: "30%",
                   width: "100%",
                   maxWidth: "450px",
-                  height: "450px",
-                  objectFit: "cover",
-                  objectPosition: "center 65%"
+                  height: "auto",
+                  maxHeight: "450px",
+                  objectFit: "contain"
                 }}
               />
             </Col>
